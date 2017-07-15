@@ -1,7 +1,6 @@
 import os
 from bs4 import BeautifulSoup
 import urllib.request
-# import sys
 
 # Get the TTMIK curriculum page and parse it into html
 with urllib.request.urlopen("http://talktomeinkorean.com/curriculum/") as url:
@@ -52,6 +51,6 @@ for link in links_to_download:
     print('Downloading ' + filename + '...', end='\r', flush=True)
     urllib.request.urlretrieve(href, tgt_path)
     # TODO: Add download status bar
-    # TODO: Clear the console after download is complete, replace with "Downloaded {filename} successfully."
+
     # \033[K = clear line, \r = carriage return (go back to start of line)
     print('\033[K Downloaded %s successfully!' % filename)
